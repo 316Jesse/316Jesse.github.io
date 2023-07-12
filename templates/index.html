@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coin Charts</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+  <img id="background-image" src="{{ url_for('static', filename='Bitcoin.gif') }}" alt="Background Animation" alt="Background GIF">
+  <h1 id="chart-title">Crypto Charts!</h1>
+  <form id="chartForm">
+    <label for="coin">Select Coin:</label>
+    <select id="coin" name="coin">
+        <option value="BTC">Bitcoin</option>
+        <option value="LTC">Litecoin</option>
+        <option value="ETH">Ethereum</option>
+    </select>
+    <label for="time_period">Select Time Period:</label>
+    <select id="time_period" name="time_period">
+        <option value="1m">One Month</option>
+        <option value="1y">One Year</option>
+        <option value="all">All Time</option>
+    </select>
+    <button type="submit">Generate Chart</button>
+  </form>
+  <div id="chartContainer">
+    <div id="chart"></div>
+  </div>
+  <br><br>
+  <h1>Credit to:</h1>
+  <ul>
+    <li>Jesse Swincicki</li>
+    <li>Hector Garcia</li>
+    <li>Laura Herrera</li>
+    <li>Justin Froehlich</li>
+    <li>Pablo Samuel Reyes</li>
+  </ul>
+  <h1>Source for data:</h1>
+  <ul>
+    <li>https://www.investing.com/crypto/bitcoin/historical-data</li>
+    <li>https://www.investing.com/crypto/litecoin/historical-data</li>
+    <li>https://www.investing.com/crypto/ethereum/historical-data</li>
+  </ul>
+
+  <script src="{{ url_for('static', filename='plot.js') }}"></script>
+</body>
+
+</html>
